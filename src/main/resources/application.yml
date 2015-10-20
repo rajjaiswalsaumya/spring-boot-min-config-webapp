@@ -1,0 +1,23 @@
+server:
+    port: 9090
+---
+spring:
+    view:
+        prefix: /views/
+        suffix: .jsp
+    application:
+        name: Secured App
+        index: 80
+---
+debug: false
+---
+logging:
+    level:
+        org:
+            springframework:
+                boot: ERROR
+            cdac:
+                gist: DEBUG
+---
+service:
+    version: ${version}
