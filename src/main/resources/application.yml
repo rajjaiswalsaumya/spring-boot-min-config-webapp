@@ -22,3 +22,7 @@ logging:
 ---
 service:
   version: ${version}
+---
+security:
+  basic:
+    enabled: false

@@ -8,6 +8,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="/login"/>
+<c:url var="loginurl" value="/login"/>
+<jsp:forward page="${loginurl}"/>
 </body>
 </html>

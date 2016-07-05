@@ -27,6 +27,16 @@ public class EmbeddedBeansCustomizer {
             MutableDateTime mutableDateTime = new MutableDateTime(new Date());
             mutableDateTime.addDays(3);
             http
+                    .authorizeRequests()
+                    .antMatchers("/index").permitAll()
+                    .anyRequest().fullyAuthenticated().and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .permitAll().and()
+                    .logout()
+                    .permitAll()
+                    .clearAuthentication(true)
+                    .invalidateHttpSession(true).and()
                     .headers()
                     .httpStrictTransportSecurity().and()
                     .xssProtection().and()

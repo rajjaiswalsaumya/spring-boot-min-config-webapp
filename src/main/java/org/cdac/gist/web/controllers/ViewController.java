@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class ViewController {
-    @RequestMapping(value = {"/", "/index"})
+    @RequestMapping(value = {"/index"})
     public String indexView() {
         return "index";
     }
@@ -25,8 +25,6 @@ public class ViewController {
 
     @RequestMapping(value = {"/welcome"})
     public String welcomeView(HttpSession session) {
-        if (session.getAttribute("user") == null)
-            return "redirect:/index";
         return "welcome";
     }
 
