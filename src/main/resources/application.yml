@@ -3,7 +3,7 @@ server:
 ---
 spring:
     view:
-        prefix: /views/
+        prefix: /WEB-INF/views/
         suffix: .jsp
     application:
         name: Secured App
