@@ -28,7 +28,8 @@ public class EmbeddedBeansCustomizer {
             mutableDateTime.addDays(3);
             http
                     .headers()
-                    .httpStrictTransportSecurity()
+                    .httpStrictTransportSecurity().and()
+                    .xssProtection().and()
                     .addHeaderWriter(new StaticHeadersWriter("Server", "Secured App Servers"))
                     .addHeaderWriter(new StaticHeadersWriter("Expires", mutableDateTime.toString()))
                     .addHeaderWriter(new StaticHeadersWriter("Cache-Control", "no-cache,no-store,must-revalidate"))
