@@ -35,7 +35,7 @@ public class ViewControllerTest {
         String url = "/welcome";
         this.mvc.perform(
                 get(url))
-                .andExpect(status().isUnauthorized());
+                .andExpect(status().ok());
     }
 
 
